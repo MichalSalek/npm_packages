@@ -1,0 +1,5 @@
+# socket
+
+Readme in progress
+
+https://socket.io/docs/v4/client-socket-instance/
