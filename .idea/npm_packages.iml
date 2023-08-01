@@ -10,7 +10,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="michalsalek_pl_2023" />
-    <orderEntry type="module" module-name="next-pages-starter" />
-    <orderEntry type="module" module-name="cpu-js" />
+    <orderEntry type="module" module-name="soseo" />
   </component>
 </module>

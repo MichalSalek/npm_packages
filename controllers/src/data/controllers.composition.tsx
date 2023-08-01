@@ -3,7 +3,7 @@ import React, { JSX, ReactNode, useEffect, useRef } from 'react'
 
 
 
-export type ControllerWithJSX = () => JSX.Element
+export type ControllerWithJSX = () => ReactElement
 export type ControllersWithJSX = ControllerWithJSX[]
 
 export type VoidController = () => void
@@ -17,7 +17,7 @@ type Props = {
     voidControllers?: VoidControllers
 }
 
-export const ControllersComposition = ({children, autostartFunctions = [], JSXControllers = [], voidControllers = []}: Props): JSX.Element => {
+export const ControllersComposition = ({children, autostartFunctions = [], JSXControllers = [], voidControllers = []}: Props): ReactElement => {
 
     const fireOnce = useRef(false)
     useEffect(() => {

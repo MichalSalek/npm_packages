@@ -1,5 +1,5 @@
 import { JSX, ReactNode } from 'react';
-export type ControllerWithJSX = () => JSX.Element;
+export type ControllerWithJSX = () => ReactElement;
 export type ControllersWithJSX = ControllerWithJSX[];
 export type VoidController = () => void;
 export type VoidControllers = VoidController[];
@@ -9,5 +9,5 @@ type Props = {
     JSXControllers?: ControllersWithJSX;
     voidControllers?: VoidControllers;
 };
-export declare const ControllersComposition: ({ children, autostartFunctions, JSXControllers, voidControllers }: Props) => JSX.Element;
+export declare const ControllersComposition: ({ children, autostartFunctions, JSXControllers, voidControllers }: Props) => ReactElement;
 export {};
