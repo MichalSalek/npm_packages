@@ -1,12 +1,7 @@
 import sendgrind from '@sendgrid/mail'
 
 
-
-
-sendgrind.setApiKey(process.env.SENDGRID_API_KEY as string)
-
-
-
+export const setApiKey = (API_KEY: string) => sendgrind.setApiKey(API_KEY)
 
 
 export const sendEmail = (msg: any) => {

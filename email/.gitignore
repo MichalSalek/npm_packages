@@ -8,4 +8,8 @@
 .editorconfig
 .yarn-error.log
 .env
-
+esm
+index.d.ts
+index.js
+index.js.map
+data

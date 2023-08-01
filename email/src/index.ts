@@ -1,8 +1,9 @@
-import { sendEmail } from './data/email'
+import { setApiKey, sendEmail } from './data/email'
 
 
 
 
 export {
+    setApiKey,
     sendEmail
 }
