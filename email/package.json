@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@msalek/emails",
-  "version": "1.7.2",
+  "version": "1.7.3",
   "description": "",
   "main": "index.js",
   "types": "index.d.ts",
@@ -20,8 +20,8 @@
   "author": "Michał Sałek <contact@michalsalek.com> (michalsalek.com)",
   "license": "BSD-1-Clause",
   "dependencies": {
-    "tslib": "^2.6.1",
-    "@sendgrid/mail": "^7.7.0"
+    "tslib": "^2.x",
+    "@sendgrid/mail": "^7.x"
   },
   "devDependencies": {
     "semver": "^7.3.7",
