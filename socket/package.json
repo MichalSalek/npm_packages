@@ -23,12 +23,10 @@
     "tslib": "^2.x"
   },
   "peerDependencies": {
-    "react": "^18.x",
-    "react-dom": "^18.x"
+
   },
   "devDependencies": {
     "semver": "^7.3.7",
-    "@types/react": "^18.2.6",
     "typescript": "^5.0.4",
     "@types/node": "^20.2.3"
   }
