@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@msalek/workers",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "types": "index.d.ts",
@@ -11,9 +11,10 @@
     "b": "yarn cleanup && yarn build:esm && yarn build:cjs",
     "build:esm": "tsc --project tsconfig.json --outDir esm",
     "build:cjs": "tsc --project tsconfig.json --module commonjs",
-    "release:major": "yarn b && npm version $(semver $npm_package_version -i major) && npm publish --tag latest",
-    "release:minor": "yarn b && npm version $(semver $npm_package_version -i minor) && npm publish --tag latest",
-    "release:patch": "yarn b && npm version $(semver $npm_package_version -i patch) && npm publish --tag latest",
+    "release:major": "yarn b && npm version $(semver $npm_package_version -i major) && npm publish --tag latest && yarn commit-new-version",
+    "release:minor": "yarn b && npm version $(semver $npm_package_version -i minor) && npm publish --tag latest && yarn commit-new-version",
+    "release:patch": "yarn b && npm version $(semver $npm_package_version -i patch) && npm publish --tag latest && yarn commit-new-version",
+    "commit-new-version": "git add package.json && git commit -m 'version dump' && git push",
     "npm-auth": "npm adduser"
   },
   "author": "Michał Sałek <contact@michalsalek.com> (michalsalek.com)",
@@ -27,6 +28,6 @@
     "semver": "^7.3.7",
     "@types/react": "^18.2.6",
     "typescript": "^5.0.4",
-    "@types/node": "^20.2.3",
+    "@types/node": "^20.2.3"
   }
 }
