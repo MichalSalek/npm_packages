@@ -8,7 +8,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cleanup": "rm -rf ./data ./esm index.js index.d.ts index.js.map",
-    "b": "yarn cleanup && yarn build:esm && yarn build:cjs",
+    "b": "yarn && yarn cleanup && yarn build:esm && yarn build:cjs",
     "build:esm": "tsc --project tsconfig.json --outDir esm",
     "build:cjs": "tsc --project tsconfig.json --module commonjs",
     "release:major": "yarn b && npm version $(semver $npm_package_version -i major) && npm publish --tag latest && yarn commit-new-version",
