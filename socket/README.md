@@ -1,5 +1,8 @@
-# socket
+# socket event bus
 
-Readme in progress
+Readme and package in progress.
+
+It will be a layer to communicate between app modules by an event sourcing.
+
 
 https://socket.io/docs/v4/client-socket-instance/
