@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@msalek/workers",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "index.js",
   "types": "index.d.ts",
@@ -22,9 +22,7 @@
   "dependencies": {
     "tslib": "^2.x"
   },
-  "peerDependencies": {
-
-  },
+  "peerDependencies": {},
   "devDependencies": {
     "semver": "^7.3.7",
     "typescript": "^5.0.4"
