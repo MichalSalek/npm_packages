@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@msalek/utils",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "types": "index.d.ts",
@@ -20,7 +20,7 @@
   "author": "Michał Sałek <contact@michalsalek.com> (michalsalek.com)",
   "license": "BSD-1-Clause",
   "dependencies": {
-    "tslib": "^2.6.1"
+    "tslib": "^2.x"
   },
   "devDependencies": {
     "semver": "^7.3.7",
