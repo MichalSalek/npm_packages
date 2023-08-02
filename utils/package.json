@@ -19,11 +19,12 @@
   },
   "author": "Michał Sałek <contact@michalsalek.com> (michalsalek.com)",
   "license": "BSD-1-Clause",
-  "dependencies": {},
+  "dependencies": {
+    "tslib": "^2.6.1"
+  },
   "devDependencies": {
     "semver": "^7.3.7",
     "typescript": "^5.0.4",
-    "@types/node": "^20.2.3",
-    "tslib": "^2.6.1"
+    "@types/node": "^20.2.3"
   }
 }

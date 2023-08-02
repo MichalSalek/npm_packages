@@ -22,7 +22,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tslib": "^2.5.2"
+    "tslib": "^2.6.1"
   },
   "devDependencies": {
     "semver": "^7.3.7",
