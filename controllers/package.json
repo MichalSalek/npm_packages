@@ -18,12 +18,13 @@
   },
   "author": "Michał Sałek <contact@michalsalek.com> (michalsalek.com)",
   "license": "BSD-1-Clause",
-  "dependencies": {},
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "devDependencies": {
     "semver": "^7.3.7",
     "@types/react": "^18.2.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "typescript": "^5.0.4"
   }
 }
