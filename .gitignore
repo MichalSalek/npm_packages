@@ -1,2 +1,16 @@
 node_modules/
 .idea
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.editorconfig
+.yarn-error.log
+.env
+esm
+index.d.ts
+index.js
+index.js.map
+data

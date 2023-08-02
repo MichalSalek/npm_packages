@@ -4,4 +4,4 @@ src/
 .editorconfig
 .gitignore
 tsconfig.json
-
+.env
