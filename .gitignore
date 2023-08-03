@@ -9,8 +9,7 @@ node_modules/
 .editorconfig
 .yarn-error.log
 .env
+
+# builds
 esm
-index.d.ts
-index.js
-index.js.map
-data
+commonjs
