@@ -1,5 +1,7 @@
 # Emails layer
 
+###### Source code: [GitHub](https://github.com/MichalSalek/npm_packages/tree/master/email)
+
 ### Helper package for keep output mailing service layer. 
 Helpful bridge with an external provider.
 

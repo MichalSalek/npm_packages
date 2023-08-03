@@ -1,4 +1,6 @@
-# web workers
+# Web Workers
+
+###### Source code: [GitHub](https://github.com/MichalSalek/npm_packages/tree/master/workers)
 
 Readme and package in progress.
 
