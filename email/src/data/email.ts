@@ -17,7 +17,7 @@ export type SendEmail = {
 export const sendEmail = (msg: SendEmail, VERIFIED_SENDER: string): Promise<void> => {
 
     try {
-        sendgrid.send({...msg, from: VERIFIED_SENDER})
+        void sendgrid.send({...msg, from: VERIFIED_SENDER})
 
         console.log('@msalek/emails: Email sent.')
 
@@ -27,6 +27,6 @@ export const sendEmail = (msg: SendEmail, VERIFIED_SENDER: string): Promise<void
         console.error('@msalek/emails: Error:')
         console.error(error)
 
-        return Promise.reject()
+        return Promise.reject(error)
     }
 }
