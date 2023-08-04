@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@msalek/utils",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "",
   "main": "main/index.js",
   "types": "main/index.d.ts",
@@ -10,7 +10,7 @@
     "cleanup": "rm -rf ./esm ./main",
     "b": "yarn && yarn cleanup && yarn build:esm && yarn build:cjs",
     "build:esm": "tsc --project tsconfig.json --module esnext --outDir esm",
-    "build:cjs": "tsc --project tsconfig.json --module amd --outFile main/index.js",
+    "build:cjs": "tsc --project tsconfig.json --module system --outFile main/index.js",
     "release:major": "yarn b && npm version $(semver $npm_package_version -i major) && npm publish --tag latest && yarn commit-new-version",
     "release:minor": "yarn b && npm version $(semver $npm_package_version -i minor) && npm publish --tag latest && yarn commit-new-version",
     "release:patch": "yarn b && npm version $(semver $npm_package_version -i patch) && npm publish --tag latest && yarn commit-new-version",
