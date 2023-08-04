@@ -22,6 +22,6 @@ No framework markup.
     ValueOf
 ```
 
-#### **For full documentation go to the index.d.ts file**.
+#### **For full documentation go to the declaration (.d.ts) files**.
 
-##### Use `yarn b` command for generate build files with declarations.
+###### Development only: use `yarn b` command for generate build files with declarations.
