@@ -23,3 +23,5 @@ No framework markup.
 ```
 
 #### **For full documentation go to the index.d.ts file**.
+
+##### Use `yarn b` command for generate build files with declarations.
