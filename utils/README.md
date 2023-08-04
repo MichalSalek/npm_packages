@@ -7,7 +7,7 @@ No framework markup.
 
 
 ## Includes:
-```js
+```ts
     freezeThreadAndWait,
     getDateNowInString,
     isProductionEnv,
