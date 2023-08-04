@@ -13,3 +13,4 @@ node_modules/
 # builds
 esm
 commonjs
+main

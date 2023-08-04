@@ -12,7 +12,14 @@ No framework markup.
     getDateNowInString,
     isProductionEnv,
     randomIntFromNumbersRange,
-    isUndefinedType
+    isUndefinedType,
+    setNewURLImmediately,
+    getURLParameters,
+    getQueryStringWithoutLastMergeChar,
+    getURLWithoutSearch,
+    asyncScrollToTop,
+    getCapitalizedString,
+    ValueOf
 ```
 
-And maybe more - checkout the d.ts files for current knowledge.
+#### **For full documentation go to the index.d.ts file**.
