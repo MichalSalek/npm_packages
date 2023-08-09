@@ -11,7 +11,7 @@ export type SendgridAPI = {
     from: string // verified sender
     subject: string // email topic
     text: string // email body
-    html: string  // email body with html
+    html?: string  // email body with html
 }
 
 // 'from' key is mandatory in sendgrid and must be verified at sendgrid website.

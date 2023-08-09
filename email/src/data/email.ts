@@ -7,7 +7,7 @@ export type SendEmail = {
     to: SendgridAPI['to']
     subject: SendgridAPI['subject']
     text: SendgridAPI['text']
-    html: SendgridAPI['html']
+    html?: SendgridAPI['html']
 }
 
 
