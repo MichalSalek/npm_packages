@@ -1,23 +1,21 @@
-import sendgrid from '@sendgrid/mail'
+import { sendEmailSendGrid, SendgridAPI } from './sendGrid.integration'
 
-
-
-
-export const setApiKey = (API_KEY: string) => sendgrid.setApiKey(API_KEY)
 
 
 
 export type SendEmail = {
-    subject: string
-    text: string
+    to: SendgridAPI['to']
+    subject: SendgridAPI['subject']
+    text: SendgridAPI['text']
+    html: SendgridAPI['html']
 }
 
-// 'from' key is mandatory in sendgrid and must be verified at sendgrid website.
 
-export const sendEmail = (msg: SendEmail, VERIFIED_SENDER: string): Promise<void> => {
+
+export const sendEmail = async (payload: SendEmail, VERIFIED_SENDER: string): Promise<void> => {
 
     try {
-        void sendgrid.send({...msg, from: VERIFIED_SENDER})
+        await sendEmailSendGrid({...payload, from: VERIFIED_SENDER})
 
         console.log('@msalek/emails: Email sent.')
 
