@@ -1,5 +1,5 @@
 import sendgrid from '@sendgrid/mail'
-
+import Response from "@sendgrid/helpers/classes/response";
 
 
 
@@ -16,11 +16,6 @@ export type SendgridAPI = {
 
 // 'from' key is mandatory in sendgrid and must be verified at sendgrid website.
 
-export const sendEmailSendGrid = async (payload: SendgridAPI): Promise<void> => {
-    try {
-        await sendgrid.send(payload)
-        return Promise.resolve()
-    } catch (e) {
-        return Promise.reject(e)
-    }
+export const sendEmailSendGrid = async (payload: SendgridAPI): Promise<[Response, {}]> => {
+    return sendgrid.send(payload)
 }
