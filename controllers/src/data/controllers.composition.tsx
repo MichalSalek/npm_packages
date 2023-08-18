@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useRef, ReactElement } from 'react'
+import React, { ReactElement, ReactNode, useEffect, useRef } from 'react'
 
 
 
@@ -6,43 +6,84 @@ import React, { ReactNode, useEffect, useRef, ReactElement } from 'react'
 export type ControllerWithJSX = () => ReactElement
 export type ControllersWithJSX = ControllerWithJSX[]
 
-export type VoidController = () => void
-export type VoidControllers = VoidController[]
+export type NoReturnValueFunction = () => void
+export type NoReturnValueFunctions = NoReturnValueFunction[]
 
 
 type Props = {
     children: ReactNode
-    autostartFunctions?: VoidControllers
-    JSXControllers?: ControllersWithJSX
-    voidControllers?: VoidControllers
+    autostartFunctions: NoReturnValueFunctions
+    userInteractionFunctions: NoReturnValueFunctions
+    hookControllers: NoReturnValueFunctions
+    JSXControllers: ControllersWithJSX
 }
 
-export const ControllersComposition = ({children, autostartFunctions = [], JSXControllers = [], voidControllers = []}: Props): ReactElement => {
+export const ControllersComposition = (
+    {
+        children,
+        autostartFunctions = [],
+        userInteractionFunctions = [],
+        JSXControllers = [],
+        hookControllers = []
+    }: Props): ReactElement => {
 
-    const fireOnce = useRef(false)
+
+
+    // Autostart
+    //
+    const runOnce = useRef(false)
     useEffect(() => {
-        if (fireOnce.current) return () => undefined
-
-        fireOnce.current = true
-        autostartFunctions.forEach((func: VoidController) => {
+        if (runOnce.current) return () => void undefined
+        runOnce.current = true
+        autostartFunctions.forEach((func: NoReturnValueFunction) => {
             func()
         })
-
-        return () => undefined
+        return () => void undefined
     })
 
 
-    voidControllers.forEach((controller: VoidController) => {
+
+    // User Interaction start
+    //
+    const runOnce2 = useRef(false)
+    useEffect(() => {
+        if (runOnce2.current) return () => void undefined
+        runOnce2.current = true
+        const userEvents = ['scroll', 'keydown', 'pointerdown', 'pointermove', 'touchstart']
+        let innerRunOnce = false
+        const callbackClosure = () => {
+            if (innerRunOnce) return void undefined
+            innerRunOnce = true
+            setTimeout(() => {
+                userInteractionFunctions.forEach((func: NoReturnValueFunction) => {
+                    func()
+                })
+            }, 1000)
+            userEvents.forEach((eventName) => document?.removeEventListener(eventName, callbackClosure))
+        }
+        userEvents.forEach((eventName) => document?.addEventListener(eventName, callbackClosure))
+        return () => void undefined
+    }, [])
+
+
+
+    // Hooks
+    //
+    hookControllers.forEach((controller: NoReturnValueFunction) => {
             controller()
         }
     )
 
 
+
+    // JSX Controllers
+    //
     return <>
         {JSXControllers.map((controller: ControllerWithJSX) => {
             const calledController = controller()
             if (!calledController) {
                 console.error('@msalek/controllers:' + ' Empty controller tried be called.')
+                return null
             }
             return <aside key={calledController.key}>{calledController}</aside>
         })}
