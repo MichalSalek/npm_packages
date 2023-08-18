@@ -51,7 +51,7 @@ export const ControllersComposition = (
         runOnce2.current = true
         const userEvents = ['scroll', 'keydown', 'pointerdown', 'pointermove', 'touchstart']
         let innerRunOnce = false
-        const callbackClosure = () => {
+        const callbackClosure = (): void => {
             if (innerRunOnce) return void undefined
             innerRunOnce = true
             setTimeout(() => {
