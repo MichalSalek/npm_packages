@@ -11,16 +11,16 @@ export type NoReturnValueFunctions = NoReturnValueFunction[]
 
 
 type Props = {
-    children: ReactNode
-    autostartFunctions: NoReturnValueFunctions
-    userInteractionFunctions: NoReturnValueFunctions
-    hookControllers: NoReturnValueFunctions
-    JSXControllers: ControllersWithJSX
+    children?: ReactNode
+    autostartFunctions?: NoReturnValueFunctions
+    userInteractionFunctions?: NoReturnValueFunctions
+    hookControllers?: NoReturnValueFunctions
+    JSXControllers?: ControllersWithJSX
 }
 
 export const ControllersComposition = (
     {
-        children,
+        children = undefined,
         autostartFunctions = [],
         userInteractionFunctions = [],
         JSXControllers = [],
@@ -35,7 +35,7 @@ export const ControllersComposition = (
     useEffect(() => {
         if (runOnce.current) return () => void undefined
         runOnce.current = true
-        autostartFunctions.forEach((func: NoReturnValueFunction) => {
+        autostartFunctions?.forEach((func: NoReturnValueFunction) => {
             func()
         })
         return () => void undefined
@@ -55,7 +55,7 @@ export const ControllersComposition = (
             if (innerRunOnce) return void undefined
             innerRunOnce = true
             setTimeout(() => {
-                userInteractionFunctions.forEach((func: NoReturnValueFunction) => {
+                userInteractionFunctions?.forEach((func: NoReturnValueFunction) => {
                     func()
                 })
             }, 1000)
@@ -69,7 +69,7 @@ export const ControllersComposition = (
 
     // Hooks
     //
-    hookControllers.forEach((controller: NoReturnValueFunction) => {
+    hookControllers?.forEach((controller: NoReturnValueFunction) => {
             controller()
         }
     )
@@ -79,7 +79,7 @@ export const ControllersComposition = (
     // JSX Controllers
     //
     return <>
-        {JSXControllers.map((controller: ControllerWithJSX) => {
+        {JSXControllers?.map((controller: ControllerWithJSX) => {
             const calledController = controller()
             if (!calledController) {
                 console.error('@msalek/controllers:' + ' Empty controller tried be called.')
