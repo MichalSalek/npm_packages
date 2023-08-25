@@ -1,6 +1,10 @@
-import { ControllersComposition } from './data/controllers.composition'
+import { ControllersComposition, ControllersWithJSX, NoReturnValueFunctions } from './data/controllers.composition'
 
 
 
 
-export { ControllersComposition }
+export {
+    ControllersComposition,
+    ControllersWithJSX,
+    NoReturnValueFunctions
+}
