@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@msalek/utils",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "",
   "main": "main/index.js",
   "types": "main/index.d.ts",
