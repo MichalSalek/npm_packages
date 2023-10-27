@@ -8,10 +8,10 @@ export const randomIntFromNumbersRange = (minRange: number, maxRange: number): n
     return Math.floor(Math.random() * (maxRange - minRange + 1) + minRange)
 }
 
-export const only2DigitsFloat = (data: number | string): number | null => {
+export const only2DigitsFloat = (data: number | string): number => {
     if (Number.isNaN(Number(data))) {
         console.error('only2DigitsFloat', 'Input data is not a number.', typeof data, data)
-        return null
+        return Number(data)
     }
     return parseFloat(Number(data).toFixed(2))
 }
