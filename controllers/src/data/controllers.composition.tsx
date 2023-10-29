@@ -79,13 +79,13 @@ export const ControllersComposition = (
     // JSX Controllers
     //
     return <>
-        {JSXControllers?.map((controller: ControllerWithJSX) => {
+        {JSXControllers?.map((controller: ControllerWithJSX, index: number) => {
             const calledController = controller()
             if (!calledController) {
                 console.error('@msalek/controllers:' + ' Empty controller tried be called.')
                 return null
             }
-            return <aside key={calledController.key}>{calledController}</aside>
+            return <aside key={index}>{calledController}</aside>
         })}
 
         {children}
