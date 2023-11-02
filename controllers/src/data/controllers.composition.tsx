@@ -39,7 +39,7 @@ export const ControllersComposition = (
             func()
         })
         return () => void undefined
-    })
+    }, [])
 
 
 
@@ -70,12 +70,9 @@ export const ControllersComposition = (
     // Hooks
     //
     hookControllers?.forEach((controller: NoReturnValueFunction) => {
-            controller()
-        }
-    )
-
-
-
+        controller()
+    })
+    
     // JSX Controllers
     //
     return <>
