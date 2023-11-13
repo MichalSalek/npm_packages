@@ -33,20 +33,20 @@ export const ControllersComposition = (
         hookControllers?.map((controller: NoReturnValueFunction) =>  controller()))
     useHookControllers()
 
-    // Autostart
-    //
-    useRef(() => {
+
+    const runOnce = useRef(false)
+    useEffect(() => {
+        if (runOnce.current) return () => void undefined
+        runOnce.current = true
+
+        // Autostart
+        //
         autostartFunctions?.forEach((func: NoReturnValueFunction) => {
             func()
         })
-    })
 
-    // User Interaction start
-    //
-    const runOnce2 = useRef(false)
-    useEffect(() => {
-        if (runOnce2.current) return () => void undefined
-        runOnce2.current = true
+        // User Interaction start
+        //
         const userEvents = ['scroll', 'keydown', 'pointerdown', 'pointermove', 'touchstart']
         let innerRunOnce = false
         const callbackClosure = (): void => {
@@ -62,7 +62,6 @@ export const ControllersComposition = (
         userEvents.forEach((eventName) => document?.addEventListener(eventName, callbackClosure))
         return () => void undefined
     }, [])
-
 
 
     // JSX Controllers
