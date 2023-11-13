@@ -30,10 +30,8 @@ export const ControllersComposition = (
 
     // Hooks
     //
-    const useHookControllers = (() =>
-        hookControllers?.map((controller: NoReturnValueFunction) => controller()))
-    useHookControllers()
-
+    hookControllers?.map((controller: NoReturnValueFunction) => controller())
+    
 
     const runOnce = useRef(false)
     useEffect(() => {
