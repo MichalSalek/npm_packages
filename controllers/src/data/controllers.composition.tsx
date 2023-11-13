@@ -27,7 +27,11 @@ export const ControllersComposition = (
         hookControllers = []
     }: Props): ReactElement => {
 
-
+    // Hooks
+    //
+    const useHookControllers = (() =>
+        hookControllers?.map((controller: NoReturnValueFunction) =>  controller()))
+    useHookControllers()
 
     // Autostart
     //
@@ -67,19 +71,13 @@ export const ControllersComposition = (
 
 
 
-    // Hooks
-    //
-    hookControllers?.forEach((controller: NoReturnValueFunction) => {
-        controller()
-    })
-    
     // JSX Controllers
     //
     return <>
         {JSXControllers?.map((controller: ControllerWithJSX, index: number) => {
             const calledController = controller()
             if (!calledController) {
-                console.error('@msalek/controllers:' + ' Empty controller tried be called.')
+                console.error('@msalek/controllers:' + ' Empty controller tried be called as JSX.')
                 return null
             }
             return <aside key={index}>{calledController}</aside>
