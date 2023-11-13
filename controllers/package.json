@@ -20,7 +20,8 @@
   "author": "Michał Sałek <contact@michalsalek.com> (michalsalek.com)",
   "license": "BSD-1-Clause",
   "dependencies": {
-    "tslib": "^2.x"
+    "tslib": "^2.x",
+    "@msalek/utils": "^1"
   },
   "peerDependencies": {
     "react": "^18.x",

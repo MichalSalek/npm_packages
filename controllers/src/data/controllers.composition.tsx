@@ -1,3 +1,4 @@
+import { freezeThreadAndWait }                               from '@msalek/utils'
 import React, { ReactElement, ReactNode, useEffect, useRef } from 'react'
 
 
@@ -30,7 +31,7 @@ export const ControllersComposition = (
     // Hooks
     //
     const useHookControllers = (() =>
-        hookControllers?.map((controller: NoReturnValueFunction) =>  controller()))
+        hookControllers?.map((controller: NoReturnValueFunction) => controller()))
     useHookControllers()
 
 
@@ -38,28 +39,31 @@ export const ControllersComposition = (
     useEffect(() => {
         if (runOnce.current) return () => void undefined
         runOnce.current = true
+        freezeThreadAndWait(1).then(() => {
 
-        // Autostart
-        //
-        autostartFunctions?.forEach((func: NoReturnValueFunction) => {
-            func()
+            // Autostart
+            //
+            autostartFunctions?.forEach((func: NoReturnValueFunction) => {
+                func()
+            })
+
+            // User Interaction start
+            //
+            const userEvents = ['scroll', 'keydown', 'pointerdown', 'pointermove', 'touchstart']
+            let innerRunOnce = false
+            const callbackClosure = (): void => {
+                if (innerRunOnce) return void undefined
+                innerRunOnce = true
+                setTimeout(() => {
+                    userInteractionFunctions?.forEach((func: NoReturnValueFunction) => {
+                        func()
+                    })
+                }, 1000)
+                userEvents.forEach((eventName) => document?.removeEventListener(eventName, callbackClosure))
+            }
+            userEvents.forEach((eventName) => document?.addEventListener(eventName, callbackClosure))
+
         })
-
-        // User Interaction start
-        //
-        const userEvents = ['scroll', 'keydown', 'pointerdown', 'pointermove', 'touchstart']
-        let innerRunOnce = false
-        const callbackClosure = (): void => {
-            if (innerRunOnce) return void undefined
-            innerRunOnce = true
-            setTimeout(() => {
-                userInteractionFunctions?.forEach((func: NoReturnValueFunction) => {
-                    func()
-                })
-            }, 1000)
-            userEvents.forEach((eventName) => document?.removeEventListener(eventName, callbackClosure))
-        }
-        userEvents.forEach((eventName) => document?.addEventListener(eventName, callbackClosure))
         return () => void undefined
     }, [])
 
