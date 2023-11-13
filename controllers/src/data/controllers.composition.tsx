@@ -35,17 +35,11 @@ export const ControllersComposition = (
 
     // Autostart
     //
-    const runOnce = useRef(false)
-    useEffect(() => {
-        if (runOnce.current) return () => void undefined
-        runOnce.current = true
+    useRef(() => {
         autostartFunctions?.forEach((func: NoReturnValueFunction) => {
             func()
         })
-        return () => void undefined
-    }, [])
-
-
+    })
 
     // User Interaction start
     //
