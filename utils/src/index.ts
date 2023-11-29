@@ -1,4 +1,4 @@
-import { freezeThreadAndWait, debounce }                                                                             from './data/asyncUtil.api'
+import { freezeThreadAndWait, debounce, useDebounce }                                                                             from './data/asyncUtil.api'
 import { getDateNowInString }                                                                              from './data/dateAndTimeUtil.api'
 import { isProductionEnv }                                                                                 from './data/envUtil.api'
 import { only2DigitsFloat, randomIntFromNumbersRange }                                                     from './data/numberUtil.api'
@@ -12,6 +12,7 @@ import { asyncScrollToTop }                                                     
 
 export {
     debounce,
+    useDebounce,
     freezeThreadAndWait,
     getDateNowInString,
     isProductionEnv,
