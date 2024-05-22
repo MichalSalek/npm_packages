@@ -5,3 +5,6 @@ export const isUndefinedType = (somethingToCheck: unknown | undefined): boolean 
 
 // Equivalent to KeyOf
 export type ValueOf<T> = T[keyof T]
+
+export type OptionalExceptFor<T, TRequired extends keyof T> = Partial<T> & Pick<T, TRequired>
+
