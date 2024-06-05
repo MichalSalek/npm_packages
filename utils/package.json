@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@msalek/utils",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "",
   "main": "main/index.js",
   "types": "main/index.d.ts",
@@ -25,8 +25,8 @@
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/react": "^18",
     "semver": "^7",
-    "typescript": "^5",
-    "@types/react": "18^"
+    "typescript": "^5"
   }
 }
