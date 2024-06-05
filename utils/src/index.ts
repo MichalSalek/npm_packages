@@ -2,6 +2,7 @@ import { debounce, freezeThreadAndWait, useDebounce }                           
 import { getDateNowInString }                                                                              from './data/dateAndTimeUtil.api'
 import { isProductionEnv }                                                                                 from './data/envUtil.api'
 import { only2DigitsFloat, randomIntFromNumbersRange }                                                     from './data/numberUtil.api'
+import { areObjectsEqualShallow }                                                                          from './data/objectUtil.api'
 import { getCapitalizedString }                                                                            from './data/stringUtil.api'
 import { isUndefinedType, OptionalExceptFor, ValueOf }                                                     from './data/typesUtil.api'
 import { getQueryStringWithoutLastMergeChar, getURLParameters, getURLWithoutSearch, setNewURLImmediately } from './data/urlUtil.api'
@@ -26,5 +27,6 @@ export {
   asyncScrollToTop,
   getCapitalizedString,
   ValueOf,
-  OptionalExceptFor
+  OptionalExceptFor,
+  areObjectsEqualShallow
 }
