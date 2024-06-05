@@ -1,4 +1,4 @@
-export const areObjectsEqualShallow = (a: { [key:unknown] }, b: { [key:unknown] }) => {
+export const areObjectsEqualShallow = (a: Record<any,any>, b: Record<any,any>) => {
   for(var key in a) {
     if(a[key] !== b[key]) {
       return false;
