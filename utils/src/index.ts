@@ -4,7 +4,7 @@ import { isProductionEnv }                                                      
 import { only2DigitsFloat, randomIntFromNumbersRange }                                                     from './data/numberUtil.api'
 import { areObjectsEqualShallow }                                                                          from './data/objectUtil.api'
 import { getCapitalizedString }                                                                            from './data/stringUtil.api'
-import { isUndefinedType, OptionalExceptFor, ValueOf }                                                     from './data/typesUtil.api'
+import { isNotDefined, OptionalExceptFor, ValueOf }                                                     from './data/typesUtil.api'
 import { getQueryStringWithoutLastMergeChar, getURLParameters, getURLWithoutSearch, setNewURLImmediately } from './data/urlUtil.api'
 import { asyncScrollToTop }                                                                                from './data/windowUtil.api'
 
@@ -19,7 +19,7 @@ export {
   isProductionEnv,
   randomIntFromNumbersRange,
   only2DigitsFloat,
-  isUndefinedType,
+  isNotDefined,
   setNewURLImmediately,
   getURLParameters,
   getQueryStringWithoutLastMergeChar,
