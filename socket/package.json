@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@msalek/socket",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "",
   "main": "main/index.js",
   "types": "main/index.d.ts",
