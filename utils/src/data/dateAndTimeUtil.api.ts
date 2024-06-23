@@ -10,9 +10,7 @@ export const getDateNowInString = (
   const dateNow = new Date()
 
   if (getISOFormat) {
-    return `${
-      withTimestamp ? '[' + Date.now() + ']' : ''
-    } ${dateNow.toISOString()}`
+    return `${withTimestamp ? '[' + Date.now() + '] ' : ''}${dateNow.toISOString()}`
   } else {
     const date = dateNow.toLocaleDateString('en-us', {
       year: 'numeric',
