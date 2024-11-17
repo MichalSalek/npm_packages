@@ -37,13 +37,15 @@ export const ControllersComposition = (
     useEffect(() => {
         if (runOnce.current) return () => void undefined
         runOnce.current = true
-        freezeThreadAndWait(1).then(() => {
+        freezeThreadAndWait(1).then(async () => {
 
             // Autostart
             //
-            autostartFunctions?.forEach((func: NoReturnValueFunction) => {
-                func()
-            })
+          await Promise.all(autostartFunctions)
+            // autostartFunctions?.forEach((func: NoReturnValueFunction) => {
+            //     func()
+            // })
+
 
             // User Interaction start
             //
