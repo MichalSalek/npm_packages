@@ -20,10 +20,10 @@ export const removeSearchParamFromQueryString = (name: string, currentSearchPara
 
 export const addAndReplaceStateByWindowHistory = (name: string, value: string, currentSearchParams: string = location.search) => {
   const newUrl = addSearchParamToQueryString(name, value, currentSearchParams)
-  window.history.pushState({ ...window.history.state, as: newUrl, url: newUrl }, '', newUrl)
+  window.history.pushState({}, '', newUrl)
 }
 
 export const removeAndReplaceStateByWindowHistory = (name: string, currentSearchParams: string = location.search) => {
   const newUrl = removeSearchParamFromQueryString(name, currentSearchParams)
-  window.history.pushState({ ...window.history.state, as: newUrl, url: newUrl }, '', newUrl)
+  window.history.pushState({}, '', newUrl)
 }
