@@ -14,14 +14,16 @@ export const getSearchParams = (name: string, currentSearchParams: string = loca
 export const removeSearchParamFromQueryString = (name: string, currentSearchParams: string = location.search) => {
   const params = new URLSearchParams(currentSearchParams)
   params.delete(name)
-  const includeQuestionMark = params.entries.length > 0 ? '?' : ''
+  const includeQuestionMark = params.size > 0 ? '?' : ''
   return location.pathname + includeQuestionMark + params.toString()
 }
 
 export const addAndReplaceStateByWindowHistory = (name: string, value: string, currentSearchParams: string = location.search) => {
-  window.history.pushState({}, '', addSearchParamToQueryString(name, value, currentSearchParams))
+  const newUrl = addSearchParamToQueryString(name, value, currentSearchParams)
+  window.history.pushState({ ...window.history.state, as: newUrl, url: newUrl }, '', newUrl)
 }
 
 export const removeAndReplaceStateByWindowHistory = (name: string, currentSearchParams: string = location.search) => {
-  window.history.pushState({}, '', removeSearchParamFromQueryString(name, currentSearchParams))
+  const newUrl = removeSearchParamFromQueryString(name, currentSearchParams)
+  window.history.pushState({ ...window.history.state, as: newUrl, url: newUrl }, '', newUrl)
 }

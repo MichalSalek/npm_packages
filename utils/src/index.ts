@@ -8,6 +8,7 @@ import { getCapitalizedString }                                                 
 import { isNotDefined, OptionalExceptFor, ValueOf }                                                                                                                from './data/typesUtil.api'
 import { getQueryStringWithoutLastMergeChar, getURLParameters, getURLWithoutSearch, setNewURLImmediately }                                                         from './data/urlUtil.api'
 import { asyncScrollToTop }                                                                                                                                        from './data/windowUtil.api'
+import { removeDuplicates }                                                                                                                                        from './data/arrayUtil.api'
 
 
 
@@ -34,5 +35,6 @@ export {
   getSearchParams,
   removeSearchParamFromQueryString,
   addAndReplaceStateByWindowHistory,
-  removeAndReplaceStateByWindowHistory
+  removeAndReplaceStateByWindowHistory,
+  removeDuplicates
 }
