@@ -1,4 +1,4 @@
-import { debounce, freezeThreadAndWait, useDebounce }                                                                                                              from './data/asyncUtil.api'
+import { debounce, freezeThreadAndWait, useDebounce, handlePromiseWithTimeout }                                                                                                              from './data/asyncUtil.api'
 import { getDateNowInString }                                                                                                                                      from './data/dateAndTimeUtil.api'
 import { isProductionEnv }                                                                                                                                         from './data/envUtil.api'
 import { only2DigitsFloat, randomIntFromNumbersRange }                                                                                                             from './data/numberUtil.api'
@@ -16,6 +16,7 @@ import { removeDuplicates }                                                     
 export {
   debounce,
   useDebounce,
+  handlePromiseWithTimeout,
   freezeThreadAndWait,
   getDateNowInString,
   isProductionEnv,

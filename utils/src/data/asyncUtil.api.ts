@@ -34,3 +34,17 @@ export function useDebounce<T>(value: T, delay?: number): T {
 
     return debouncedValue
 }
+
+
+export const handlePromiseWithTimeout = async <T>(
+  promise: Promise<T>,
+  ms: number = 3000,
+  timeoutError = new Error('@msalek/utils, handlePromiseWithTimeout: The timeout for a promise has passed.')
+): Promise<T> => {
+  const timeout = new Promise<never>((_, reject) => {
+    setTimeout(() => {
+      reject(timeoutError);
+    }, ms);
+  });
+  return Promise.race<T>([promise, timeout]);
+}
