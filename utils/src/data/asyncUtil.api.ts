@@ -48,3 +48,29 @@ export const handlePromiseWithTimeout = async <T>(
   });
   return Promise.race<T>([promise, timeout]);
 }
+
+export const interactionFunctionCall = (functionToFire: Function) => {
+  const USER_EVENTS = [ 'scroll', 'keydown', 'pointerdown', 'pointermove', 'touchstart' ] as const
+
+    let innerRunOnce = false;
+
+    function callbackClosure () {
+      if (innerRunOnce) {
+        return void undefined;
+      }
+
+      innerRunOnce = true;
+      setTimeout(function () {
+        functionToFire();
+      }, 200);
+      for (let i = 0; i < USER_EVENTS.length; i++) {
+        document.removeEventListener(USER_EVENTS[i], callbackClosure);
+      }
+
+      return void undefined;
+    }
+
+    for (let i = 0; i < USER_EVENTS.length; i++) {
+      document.addEventListener(USER_EVENTS[i], callbackClosure);
+    }
+};

@@ -29,7 +29,8 @@ No framework markup.
   removeSearchParamFromQueryString,
   addAndReplaceStateByWindowHistory,
   removeAndReplaceStateByWindowHistory,
-  removeDuplicates
+  removeDuplicates,
+  interactionFunctionCall
 ```
 
 For full documentation go to the declaration (.d.ts) files.
