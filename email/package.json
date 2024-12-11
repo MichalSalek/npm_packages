@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@msalek/emails",
-  "version": "1.9.18",
+  "version": "1.9.19",
   "description": "",
   "main": "main/index.js",
   "types": "main/index.d.ts",
