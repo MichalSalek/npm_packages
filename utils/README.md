@@ -6,18 +6,30 @@ No framework markup.
 
 ## Includes:
 ```ts
-    freezeThreadAndWait,
-    getDateNowInString,
-    isProductionEnv,
-    randomIntFromNumbersRange,
-    isUndefinedType,
-    setNewURLImmediately,
-    getURLParameters,
-    getQueryStringWithoutLastMergeChar,
-    getURLWithoutSearch,
-    asyncScrollToTop,
-    getCapitalizedString,
-    ValueOf
+  debounce,
+  useDebounce,
+  handlePromiseWithTimeout,
+  freezeThreadAndWait,
+  getDateNowInString,
+  isProductionEnv,
+  randomIntFromNumbersRange,
+  only2DigitsFloat,
+  isNotDefined,
+  setNewURLImmediately,
+  getURLParameters,
+  getQueryStringWithoutLastMergeChar,
+  getURLWithoutSearch,
+  asyncScrollToTop,
+  getCapitalizedString,
+  ValueOf,
+  OptionalExceptFor,
+  areObjectsEqualShallow,
+  addSearchParamToQueryString,
+  getSearchParams,
+  removeSearchParamFromQueryString,
+  addAndReplaceStateByWindowHistory,
+  removeAndReplaceStateByWindowHistory,
+  removeDuplicates
 ```
 
 For full documentation go to the declaration (.d.ts) files.
