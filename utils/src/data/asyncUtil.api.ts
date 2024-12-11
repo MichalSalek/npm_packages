@@ -62,7 +62,7 @@ export const interactionFunctionCall = (functionToFire: Function) => {
       innerRunOnce = true;
       setTimeout(function () {
         functionToFire();
-      }, 200);
+      }, 0);
       for (let i = 0; i < USER_EVENTS.length; i++) {
         document.removeEventListener(USER_EVENTS[i], callbackClosure);
       }
