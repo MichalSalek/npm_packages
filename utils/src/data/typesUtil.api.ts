@@ -8,3 +8,6 @@ export type ValueOf<T> = T[keyof T]
 
 export type OptionalExceptFor<T, TRequired extends keyof T> = Partial<T> & Pick<T, TRequired>
 
+export const isStringTypeNarrower = (value: string | undefined | unknown): value is string => {
+  return typeof value === 'string' && !!value && value.length > 0
+}
