@@ -1,4 +1,8 @@
 {
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "private": false,
   "name": "@msalek/emails",
   "version": "1.9.23",
