@@ -5,7 +5,7 @@
   },
   "private": false,
   "name": "@msalek/utils",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "description": "",
   "main": "main/index.js",
   "types": "main/index.d.ts",
