@@ -5,7 +5,7 @@
   },
   "private": false,
   "name": "@msalek/socket",
-  "version": "1.0.32",
+  "version": "1.0.33",
   "description": "",
   "main": "main/index.js",
   "types": "main/index.d.ts",
