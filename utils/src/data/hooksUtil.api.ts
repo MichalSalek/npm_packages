@@ -7,7 +7,6 @@ export const useFireOnMountHook = (fn: Function) => {
       return void undefined
     }
     fireJustOnce.current = true
-    console.log('men')
     fn()
   }, [fn])
 }
