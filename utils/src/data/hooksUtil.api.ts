@@ -1,12 +1,28 @@
-import {useEffect, useRef} from "react";
+import {useEffect, useRef} from 'react';
 
-export const useFireOnMountHook = (fn: Function) => {
+const matrix: Record<string | number, boolean> = {};
+
+export const useFireOnMountHook = (fn: Function, randomID: number | string, oncePerAppRun_CAREFUL: boolean = false) => {
+
   const fireJustOnce = useRef(false)
+
   useEffect(() => {
-    if (fireJustOnce.current) {
-      return void undefined
+
+    if (oncePerAppRun_CAREFUL) {
+
+      if (matrix[randomID]) {
+        return void undefined
+      }
+      matrix[randomID] = true
+      fn()
+
+    } else {
+
+      if (fireJustOnce.current) {
+        return void undefined
+      }
+      fireJustOnce.current = true
+      fn()
     }
-    fireJustOnce.current = true
-    fn()
   }, [fn])
 }
